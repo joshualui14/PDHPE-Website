@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
+
+header{
+  text-align: center;
+  font-family: 'Oswald', monospace;
+  font-size: 15px;
+}
+
+body{
+  margin-top: 0;
+  max-width: 100%;
+  font-family: 'Roboto', monospace;
+  font-size: 20px;
+  background-color: #f6eabe;
+  color: black;
+  overflow: auto;
+  padding: 35px 120px;
+}
+
+h1, h2, h3{
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+h1, h2{
+    margin-bottom: -10px
+}
+
+img{
+  margin-top: 20px;
+  border: 2px solid black;
+}
+
+a{
+  color: #C8D6FC;
+}
+
+p.caption{
+  color: #A99AA6;
+  font-style: italic;
+  margin-top: 0;
+  font-size: 13px;
+}
