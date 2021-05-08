@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- https://www.w3schools.com/css/default.asp -->
+	<link rel="icon" href="img/favicon.jpg">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="css/slideshow.css">
+	<link rel="stylesheet" type="text/css" href="css/navbar.css">
+	<title>PDPHE Racism Homepage</title>
+
+</head>
+
+<body>
+	<!-- nav bar stuff -->
+	<header>
+		<ul>
+			<li><a class="active" href="index.html">HOME</a></li>
+			<li><a href="aboutracism.html">ABOUT RACISM</a></li>
+			<li><a href="diversity.html">IMPORTANCE OF CULTURAL DIVERSITY</a></li>
+		</ul>
+		
+		<h1>Cultural Diversity within a Modern Society</h1>
+	</header>
+	<!-- creates a box for slideshow which determines the position and size of images-->
+	<div class="slideshowbox">
+		
+		<!-- creates each of the images with the numbers for each -->
+		<div class="slides fade"> <!-- assigns to classes -->
+			<div class="slidenumber">1/3</div> <!-- specifies the number -->
+			<img src="img/diversity.jpg">
+		</div>
+
+		<div class="slides fade">
+			<div class="slidenumber">2/3</div>
+			<img src="img/diversity-2.jpg">
+		</div>
+
+		<div class="slides fade">
+			<div class="slidenumber">3/3</div>
+			<img src="img/diversity-3.jpg">
+		</div>
+
+		<!-- creates dot elements -->
+		<div>
+  			<span class="dot"></span>
+  			<span class="dot"></span>
+ 			<span class="dot"></span>
+ 		</div>
+	</div>
+
+	<!-- javascript elements, "script" defines it -->
+	<script type="text/javascript">
+		var slideIndex = 0; /*creates a variable that is set to 0*/
+		showSlides();
+
+		/*for loop for switching between slides and hiding them*/
+		function showSlides() { /*creates a "function", specifically coded for the slides*/
+  		var i; /*sets i as variable for both "for loops"*/
+  		var slides = document.getElementsByClassName("slides"); /*creates a variable which holds slides in an array(string/list of values)*/
+  		var dots = document.getElementsByClassName("dot"); /*creates a variable which holds dots in an array*/
+  		for (i = 0; i < slides.length; i++) { /*initializes i=0, checks if i is smaller than no.of slides, if yes then increase value of i by 1 */
+    		slides[i].style.display = "none";  /*hides current image[i] then repeats for loop, showing next image, so that images disappear and dont appear on top of each other*/
+  		}
+
+  		/*for loop for making dots highlighted*/
+  		slideIndex++;/*slideindex + 1*/
+  		if (slideIndex > slides.length) {slideIndex = 1} /*when slideindex value is larger than number of slides, initializes slideindex = 1*/
+  		for (i = 0; i < dots.length; i++) { /*runs parallel to the first for loop*/
+    		dots[i].className = dots[i].className.replace("activedots", ""); /*assigns the dot value of i with the active class*/
+  		}
+  		/*changes images and dots*/
+  		slides[slideIndex-1].style.display = "block";/*makes the correct slide appear, the-ensures "slideindex" stays in sync due to previous +1*/
+  		dots[slideIndex-1].className += " activedots"; /*makes the correct dot highlighted, "" */
+  		setTimeout(showSlides, 2500); /*changes img every 2.5 secs*/
+		}
+	</script>
+
+</body>
+</html>
